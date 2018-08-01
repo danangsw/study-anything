@@ -65,3 +65,8 @@ INSERT [dbo].[person] ([id], [name], [parent_id]) VALUES (22, N'Lalu bin Dani', 
 GO
 SET IDENTITY_INSERT [dbo].[person] OFF
 GO
+ALTER TABLE [dbo].[person]  WITH CHECK ADD  CONSTRAINT [FK_person_parent_id] FOREIGN KEY([parent_id])
+REFERENCES [dbo].[person] ([id])
+GO
+ALTER TABLE [dbo].[person] CHECK CONSTRAINT [FK_person_parent_id]
+GO
