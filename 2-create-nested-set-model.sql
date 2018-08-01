@@ -1,7 +1,7 @@
 -- The Nested Set Model
 USE [FamilyTree]
 GO
-/****** Object:  Table [dbo].[personNested]    Script Date: 2018/08/01 14:09:37 ******/
+/****** Object:  Table [dbo].[personNested]    Script Date: 2018/08/01 14:57:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -21,27 +21,27 @@ GO
 SET IDENTITY_INSERT [dbo].[personNested] ON 
 
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (1, N'Ayah', 1, 43)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (1, N'Ayah', 1, 42)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (2, N'Budi', 2, 42)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (2, N'Budi', 2, 27)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (3, N'Cahyo', 27, 32)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (3, N'Cahyo', 29, 33)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (4, N'Dadang', 33, 40)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (4, N'Dadang', 34, 41)
 GO
 INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (5, N'Arif bin Budi', 3, 26)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (6, N'Baba bin Budi', 41, 42)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (6, N'Baba bin Budi', 27, 28)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (7, N'Adi bin Cahyo', 28, 29)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (7, N'Adi bin Cahyo', 30, 31)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (8, N'Bani bin Cahyo', 30, 31)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (8, N'Bani bin Cahyo', 32, 33)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (9, N'Aba bin Dadang', 34, 35)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (9, N'Aba bin Dadang', 35, 36)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (10, N'Banu bin Dadang', 36, 37)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (10, N'Banu bin Dadang', 37, 38)
 GO
-INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (11, N'Caca bin Dadang', 38, 39)
+INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (11, N'Caca bin Dadang', 39, 40)
 GO
 INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES (12, N'Amar bin Arif', 4, 5)
 GO
@@ -67,3 +67,4 @@ INSERT [dbo].[personNested] ([id], [name], [l_container], [r_container]) VALUES 
 GO
 SET IDENTITY_INSERT [dbo].[personNested] OFF
 GO
+
