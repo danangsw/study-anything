@@ -10,10 +10,79 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            PatternNumber1(10, 20);
-            Console.ReadLine();
-            PatternNumber2(1, 7);
-            Console.ReadLine();
+            bool show = true;
+            while (show) {
+                Console.WriteLine("[1] Test logic 1.");
+                Console.WriteLine("[2] Test logic 2.");
+                Console.WriteLine("[Any Key] Exit.");
+                Console.Write("Select test logic? ");
+
+                char key = Char.ToLower(Console.ReadKey().KeyChar);
+                if (key.ToString() == "1" || key.ToString() == "2")
+                {
+                    Console.Clear();
+                    int testPattern = 0;
+                    int min = 0;
+                    int max = 0;
+                    switch (key.ToString())
+                    {
+                        case "1":
+                            Console.WriteLine("[1] Test logic 1.");
+                            if (validationInputForPattern(out min, out max)) {
+                                testPattern = 1;
+                            }
+                            break;
+                        case "2":
+                            Console.WriteLine("[2] Test logic 2.");
+                            if (validationInputForPattern(out min, out max))
+                            {
+                                testPattern = 2;
+                            }
+                            break;
+                    }
+
+                    if (testPattern == 1)
+                    {
+                        Console.WriteLine("Output:");
+                        PatternNumber1(min, max);
+                    }
+                    else if (testPattern == 2)
+                    {
+                        Console.WriteLine("Output:");
+                        PatternNumber2(min, max);
+                    }
+                }
+                else {
+                    break;
+                }
+                Console.WriteLine("Press any key to continue.");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+
+        private static bool validationInputForPattern(out int min, out int max) {
+            min = 0;
+            max = 0;
+            Console.Write("Input Min: ");
+            if (Int32.TryParse(Console.ReadLine(), out min))
+            {
+                Console.Write("Input Max: ");
+                if (Int32.TryParse(Console.ReadLine(), out max))
+                {
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid number entered.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid number entered.");
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -60,7 +129,7 @@ namespace ConsoleApplication2
                     {
                         Console.Write("{0}", odds.ToArray()[i]);
                         if (i < oddCount - 1)
-                            Console.Write("_");
+                            Console.Write(" ");
                     }
                     oddCount--;
                 }
@@ -70,7 +139,7 @@ namespace ConsoleApplication2
                     {
                         Console.Write("{0}", events.ToArray()[i]);
                         if (i < eventCount - 1)
-                            Console.Write("_");
+                            Console.Write(" ");
                     }
                     eventCount++;
                 }
@@ -121,7 +190,7 @@ namespace ConsoleApplication2
                     }
 
                     if (i < oddCount - 1)
-                        Console.Write("_");
+                        Console.Write(" ");
                 }
                 isOdd = !isOdd;
                 oddCount--;
