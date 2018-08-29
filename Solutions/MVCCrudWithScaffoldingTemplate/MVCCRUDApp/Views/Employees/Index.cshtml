@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVCCRUDApp.Models.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Data List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("[+] Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NIP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @item.Birthday.ToString("dd MMMM yyyy")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NIP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NIP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NIP })
+        </td>
+    </tr>
+}
+
+</table>
